@@ -1,0 +1,6 @@
+com/example/pulse/MarketsToKafkaJob$MarketTickKafkaSerializer.class
+com/example/pulse/MarketsToKafkaJob$MarketTickToJsonMapper.class
+com/example/pulse/source/CoinGeckoSource$1.class
+com/example/pulse/model/MarketTick.class
+com/example/pulse/MarketsToKafkaJob.class
+com/example/pulse/source/CoinGeckoSource.class

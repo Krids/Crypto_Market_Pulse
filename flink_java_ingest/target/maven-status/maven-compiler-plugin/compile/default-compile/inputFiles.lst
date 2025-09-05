@@ -1,0 +1,3 @@
+/Users/Felipe/Crypto Market Pulse (Spark)/flink_java_ingest/src/main/java/com/example/pulse/MarketsToKafkaJob.java
+/Users/Felipe/Crypto Market Pulse (Spark)/flink_java_ingest/src/main/java/com/example/pulse/source/CoinGeckoSource.java
+/Users/Felipe/Crypto Market Pulse (Spark)/flink_java_ingest/src/main/java/com/example/pulse/model/MarketTick.java
