@@ -94,17 +94,20 @@ public class MarketsToKafkaJob {
     }
 
     /**
-     * Creates a Kafka sink with proper serialization and delivery guarantees.
+     * Creates a Kafka sink with proper serialization and producer properties.
      * 
      * Configuration explains:
      * - Bootstrap servers: How to connect to Kafka cluster
      * - Serializer: How to convert Java objects to Kafka records
      * - Producer properties: Performance and reliability tuning
+     * 
+     * Note: Removed DeliveryGuarantee to simplify dependencies for local execution
      */
     private static KafkaSink<String> createKafkaSink() {
         return KafkaSink.<String>builder()                          // Builder pattern for configuration
                 .setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS)       // Kafka cluster connection
                 .setRecordSerializer(new MarketTickKafkaSerializer()) // How to serialize to Kafka
+                // Removed .setDeliveryGuarantee() to avoid missing dependency issues
                 .setProperty("transaction.timeout.ms", "900000")   // 15 min timeout for transactions
                 .setProperty("batch.size", "16384")               // Batch size for better throughput
                 .setProperty("linger.ms", "5")                    // Wait up to 5ms to batch messages
